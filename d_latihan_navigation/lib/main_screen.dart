@@ -2,6 +2,7 @@ import 'package:d_latihan_navigation/second_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
+  final String message = 'Hello from the Outside';
   const MainScreen({super.key});
 
   @override
@@ -14,9 +15,10 @@ class MainScreen extends StatelessWidget {
         child: ElevatedButton(
           child: const Text('Pindah Screen'),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const SecondScreen();
-            }));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => SecondScreen(message: message)));
           },
         ),
       ),
